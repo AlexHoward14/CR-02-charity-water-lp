@@ -5,24 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charity Water Landing Page</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Remove all default margin and padding from the body */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #77a8bb; /* Keep body white so only .main-bg is blue */
+    }
+    /* Make the main content area blue and fill the whole screen except the yellow bar */
+    .main-bg {
+      background-color: #77a8bb; /* dim light blue */
+      min-height: 100vh; /* Always at least as tall as the browser window */
+      padding-bottom: 30px; /* Adds a little space at the bottom */
+    }
+    /* Make all h1 headings use the Georgia Pro font, or Georgia/serif if not available
+       and make them much larger for emphasis */
+    h1 {
+      font-family: 'Georgia Pro', Georgia, serif;
+      font-size: 2.5em; /* Makes the headline much larger */
+    }
+    /* Make all paragraph text use the Garamond font, or serif if not available
+       and make it larger for readability */
+    p {
+      font-family: Garamond, serif;
+      font-size: 1.5em; /* Makes the paragraph text larger */
+    }
+    /* Smoothly zoom the image when hovered */
+    .hero-image img {
+      transition: transform 0.3s; /* Animate the transform property */
+    }
+    .hero-image img:hover {
+      transform: scale(1.05); /* Slightly zoom in the image */
+    }
+    /* Smoothly grow the button when hovered */
+    .donate-button {
+      transition: transform 0.2s; /* Smoothly animate the transform property */
+    }
+    .donate-button:hover {
+      transform: scale(1.1); /* Make the button 10% bigger on hover */
+    }
+  </style>
 </head>
 <body>
+  <!-- Pale yellow horizontal bar at the very top with the logo inside -->
+  <div style="background-color: #fff9c4; padding: 10px 0;">
+    <img src="img/cw_logo-2.png" alt="Charity Water Logo" style="height: 50px; margin-left: 20px;">
+  </div>
 
-  <header class="hero">
-    <div class="hero-text">
-      <img src="img/cw_logo-2.png" alt="Charity Water Logo" class="logo" />
-      <h1>6% of your day fuels clean water, smiling families, and proven results.</h1>
-      <p>Just 6% of what you already spend each day can give 100% of someone’s future. Set it, forget it, and track the lives you change.</p>
-      <a href="#donate" class="donate-button">Donate!</a>
-    </div>
-    <div class="hero-image">
-      <img src="img/Charity water image 1.jpg" alt="Smiling family at a well" />
-    </div>
-  </header>
+  <!-- Main content with blue background starts here -->
+  <div class="main-bg">
+    <header class="hero">
+      <div class="hero-text">
+        <!-- Add space above and below the headline to make it stand out -->
+        <h1 style="margin-top: 50px; margin-bottom: 40px;">
+          6% of your day fuels clean water, smiling families, and proven results.
+        </h1>
+        <!-- Add space below the paragraph for separation from the CTA -->
+        <p style="margin-bottom: 50px;">
+          Just 6% of what you already spend each day can give 100% of someone’s future. Set it, forget it, and track the lives you change.
+        </p>
+        <!-- Add extra space above the CTA button and make it bold and large -->
+        <a href="#donate" class="donate-button" style="display: inline-block; padding: 20px 40px; font-size: 1.5em; font-weight: bold; margin-bottom: 60px;">
+          Donate!
+        </a>
+      </div>
+      <div class="hero-image">
+        <!-- 
+          Beginner tip:
+          - width: 400px makes the image smaller and keeps it clear.
+          - max-width: 100% makes sure it fits on small screens.
+          - height: auto keeps the image from getting squished.
+          - display: block and margin: 30px auto centers the image.
+        -->
+        <img 
+          src="img/Charity water image 1.jpg" 
+          alt="Smiling family at a well" 
+          style="width: 400px; max-width: 100%; height: auto; display: block; margin: 30px auto 0 auto;">
+      </div>
+    </header>
 
-  <section class="impact">
-    <img src="img/charity water image 2.jpg" alt="Drilling for clean water" />
-  </section>
-
+    <section class="impact">
+      <!-- 
+        Impact section content goes here.
+        The image has been removed as requested.
+      -->
+    </section>
+  </div>
 </body>
 </html>
