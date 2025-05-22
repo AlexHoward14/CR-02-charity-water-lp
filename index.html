@@ -49,6 +49,23 @@
     .fade-in-cta {
       transition: opacity 0.8s;
     }
+    /* Add this to your <style> section */
+    /* Beginner tip: This makes the image zoom in a bit when you hover over it */
+    .side-image {
+      transition: transform 0.3s; /* Smoothly animate the zoom */
+    }
+    .side-image:hover {
+      transform: scale(1.07); /* Zoom in the image a little on hover */
+    }
+    /* Add fade-in effect for additional elements */
+    .fade-in-extra {
+      transition: opacity 0.8s;
+    }
+    /* Add this to your <style> section */
+    /* Makes the image and text box fade in smoothly */
+    .fade-in-extra {
+      transition: opacity 1s;
+    }
   </style>
 </head>
 <body>
@@ -80,10 +97,12 @@
           <img 
             src="img/charity water image 2.jpg" 
             alt="Changing lives" 
-            style="width: 250px; max-width: 100%; border-radius: 10px; margin-right: 24px;">
+            class="side-image fade-in-extra"
+            style="width: 250px; max-width: 100%; border-radius: 10px; margin-right: 24px; opacity: 0;">
           <!-- The text box on the right -->
-          <div style="background: #fff; color: #222; padding: 20px 30px; border-radius: 10px; font-size: 1.3em; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            See other ways we have changed peoples lives!
+          <div class="fade-in-extra"
+            style="background: #fff9c4; color: #222; padding: 20px 30px; border-radius: 10px; font-size: 1.3em; box-shadow: 0 2px 8px rgba(0,0,0,0.08); opacity: 0;">
+            Click the photo to see other ways we have changed peoples lives!
           </div>
         </div>
       </div>
@@ -112,12 +131,19 @@
 
   <!-- Add this script just before the closing </body> tag -->
   <script>
-    // Beginner tip: This waits 2 seconds, then fades in the CTA button
+    // Beginner tip: This waits 2 seconds, then fades in the CTA button,
+    // then waits 1 more second and fades in the image and text box.
     window.onload = function() {
       setTimeout(function() {
         document.querySelector('.fade-in-cta').style.transition = "opacity 1s";
         document.querySelector('.fade-in-cta').style.opacity = 1;
-      }, 2000); // 2000 milliseconds = 2 seconds
+        setTimeout(function() {
+          var extras = document.querySelectorAll('.fade-in-extra');
+          extras.forEach(function(el) {
+            el.style.opacity = 1;
+          });
+        }, 1000); // 1 second after CTA
+      }, 2000); // 2 seconds after page load
     }
   </script>
 </body>
