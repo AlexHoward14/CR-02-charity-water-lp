@@ -44,6 +44,11 @@
     .donate-button:hover {
       transform: scale(1.1); /* Make the button 10% bigger on hover */
     }
+    /* Add this to your <style> section if you want to keep styles together */
+    /* .fade-in-cta is already set to opacity: 0 inline, so it starts hidden */
+    .fade-in-cta {
+      transition: opacity 0.8s;
+    }
   </style>
 </head>
 <body>
@@ -65,7 +70,7 @@
           Just 6% of what you already spend each day can give 100% of someone’s future. Set it, forget it, and track the lives you change.
         </p>
         <!-- Add extra space above the CTA button and make it bold and large -->
-        <a href="#donate" class="donate-button" style="display: inline-block; padding: 28px 48px; font-size: 1.5em; font-weight: bold; margin-bottom: 60px;">
+        <a href="#donate" class="donate-button fade-in-cta" style="display: inline-block; padding: 28px 48px; font-size: 1.5em; font-weight: bold; margin-bottom: 60px; opacity: 0;">
           Donate here to change a family's life!
         </a>
       </div>
@@ -91,5 +96,16 @@
       -->
     </section>
   </div>
+
+  <!-- Add this script just before the closing </body> tag -->
+  <script>
+    // Beginner tip: This waits 2 seconds, then fades in the CTA button
+    window.onload = function() {
+      setTimeout(function() {
+        document.querySelector('.fade-in-cta').style.transition = "opacity 1s";
+        document.querySelector('.fade-in-cta').style.opacity = 1;
+      }, 2000); // 2000 milliseconds = 2 seconds
+    }
+  </script>
 </body>
 </html>
